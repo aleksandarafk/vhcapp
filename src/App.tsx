@@ -415,8 +415,8 @@ export default function VHCApp() {
 
       {/* Page content */}
       {(currentPage === "virtual-coach" || currentPage === "study-jam") && (
-        <div className="w-full h-40 border-b">
-          <iframe src="https://example.com" title="Embedded Frame" className="w-full h-full border-none" />
+        <div className="w-full h-100 border-b">
+          <iframe src="http://10.0.0.200/" title="Embedded Frame" className="w-full h-full border-none" />
         </div>
       )}
 
