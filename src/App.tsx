@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Avatar } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
-import { Send, Mic, Paperclip, Bell, Menu, Trash2, LogOut, MoreVertical } from "lucide-react";
+import { Send, Mic, Paperclip, Bell, Menu, LogOut, MoreVertical } from "lucide-react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
@@ -95,33 +93,6 @@ export default function VHCApp() {
         return updated;
       });
     }, 800);
-  };
-
-   const handleRenameConfirm = () => {
-    if (chatToModify !== null && newTitle.trim() !== "") {
-      setTitles((prev) => {
-        const updated = [...prev];
-        updated[chatToModify] = newTitle.trim();
-        return updated;
-      });
-      setRenameModalOpen(false);
-      setNewTitle("");
-      setChatToModify(null);
-    }
-  };
-
-  const handleDeleteConfirm = () => {
-    if (chatToModify !== null) {
-      setConversations((prev) => prev.filter((_, i) => i !== chatToModify));
-      setTitles((prev) => prev.filter((_, i) => i !== chatToModify));
-      setCurrentConvIndex((prev) => {
-        if (prev === chatToModify) return 0;
-        if (prev > chatToModify) return prev - 1;
-        return prev;
-      });
-      setDeleteModalOpen(false);
-      setChatToModify(null);
-    }
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
