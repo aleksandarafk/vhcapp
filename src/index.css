@@ -1,6 +1,29 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@font-face {
+  font-family: 'Tecna';
+  src: url('/fonts/Tecna-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
 
+body {
+  font-family: 'Tecna', sans-serif;
+}
+
+@font-face {
+  font-family: 'Tecna Light';
+  src: url('/fonts/Tecna-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tecna Bold';
+  src: url('/fonts/Tecna-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -117,4 +140,27 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes dropDownStaySlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+.animate-dropDownStaySlideUp {
+  animation: dropDownStaySlideUp 5s ease forwards;
 }
